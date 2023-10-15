@@ -1,21 +1,35 @@
 import 'package:flutter/material.dart';
 
 class TextLearnView extends StatelessWidget {
-  const TextLearnView({super.key, this.name = "Veli"});
+  TextLearnView({super.key, this.name = "Veli"});
   final String name;
-
+  final ProjectKeys keys = ProjectKeys();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-            child: Text(
-      ("Welcome $name"),
-      maxLines: 2,
-      style: Theme.of(context)
-          .textTheme
-          .headlineLarge
-          ?.copyWith(color: Colors.red),
-      textAlign: TextAlign.center,
+            child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          (keys.welcome),
+          maxLines: 2,
+          style: Theme.of(context)
+              .textTheme
+              .headlineLarge
+              ?.copyWith(color: Colors.blueAccent),
+          textAlign: TextAlign.center,
+        ),
+        Text(
+          (keys.welcome),
+          maxLines: 2,
+          style: Theme.of(context)
+              .textTheme
+              .headlineLarge
+              ?.copyWith(color: Colors.blueAccent),
+          textAlign: TextAlign.center,
+        ),
+      ],
     )));
   }
 }
@@ -34,4 +48,8 @@ class ProjectStyles {
     fontSize: 16,
     fontWeight: FontWeight.w600,
   );
+}
+
+class ProjectKeys {
+  final String welcome = "Merhaba";
 }
